@@ -1,0 +1,12 @@
+<body style="background-color:#abdbe3">
+<h1 style="text-align: center">Datasets present in Server</h1>
+<br>
+<div >
+<ul >
+{% for item in files %}
+    {% set url = '/delete/' + item %}
+    <li>Click to delete <a href={{url}}>{{item}}</a></li>
+{% endfor %}
+</ul>
+    </div>
+</body>

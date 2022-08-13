@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<body style="background-color:#abdbe3">
+<h1 id="heading" style="text-align: center">Dataset Store</h1>
+<br>
+<div id="div1">
+<h3>Click on below dataset to download</h3>
+<ul>
+{% for item in files %}
+    {% set url = '/download/' + item %}
+    <li><a href={{url}}>{{item}}</a></li>
+{% endfor %}
+</ul>
+</div>
+<div id="div2" style="text-align: center">
+<a href="/upload" >Click here to upload dataset</a>
+<br>
+<a href="/delete">Click here to delete dataset</a>
+</div>
+</body>
+{% endblock %}
