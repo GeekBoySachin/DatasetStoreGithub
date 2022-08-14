@@ -31,7 +31,7 @@ def uploadfile():
             f.save("./datasets/"+fname)
             return 'file uploaded successfully'
         else:
-            return "Please upload file in xlsx or csv format."
+            return "Please upload file in xlsx or csv or xls format."
 
 @app.route('/download/<dataset>', methods=['GET'])
 @cross_origin()
